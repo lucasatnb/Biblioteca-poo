@@ -9,19 +9,14 @@ package biblioteca;
  *
  * @author lucas
  */
-public abstract class ItemDigital extends Item {
+public class LoanLimitExceededException  extends RuntimeException{
 
-    private boolean online;
-
-    public ItemDigital(int id, String nome) {
-        super(id, nome);
+    public LoanLimitExceededException(String s) {
+        super(s);
     }
     
     
     
     
     
- 
-    }
-
- 
+}

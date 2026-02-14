@@ -5,34 +5,49 @@
  */
 package biblioteca;
 
+
 /**
  *
  * @author lucas
  */
 public class Livro extends ItemFisico implements Alugavel,Utilizavel {
     static int prazo = 5;
-    public Livro(String nome) {
+    private SistemaDeAluguel sistema;
+    public Livro(String nome, SistemaDeAluguel sis) {
         super(001, nome, prazo);
+        super.addExemplar();
+        this.sistema = sis;
     }
 
 
-    @Override
-    public void alugar() {
-        System.out.println("você tem" + prazo + " dias");
-        super.setSobPosse(true);
+   @Override
+    public boolean alugar() { 
+        try {
+            sistema.alugar(this);
+            return true;
+        } 
+        catch (MissingObjectException ex) {
+            System.err.println("sem itens do tipo:" + super.getNome());
+        }
+        return false;
     }
-
+    
     @Override
     public void devolver() {
-        super.setSobPosse(false);
-
-
+            sistema.devolver(this);
+         
     }
+    
 
     @Override
     public void usar() {
 
         System.out.println("Vai la tu pode usar por 1h30");
+    }
+    @Override
+    public int getExemplares() {
+        return super.getExemplares();
+
     }
     
     

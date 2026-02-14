@@ -9,19 +9,17 @@ package biblioteca;
  *
  * @author lucas
  */
-public abstract class ItemDigital extends Item {
+public class ItemAlreadyOwnedException extends RuntimeException{
 
-    private boolean online;
+    public ItemAlreadyOwnedException(String s) {
+        super(s);
+    }
 
-    public ItemDigital(int id, String nome) {
-        super(id, nome);
+    public ItemAlreadyOwnedException() {
     }
     
     
     
     
     
- 
-    }
-
- 
+}

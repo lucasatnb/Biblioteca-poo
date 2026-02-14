@@ -9,19 +9,19 @@ package biblioteca;
  *
  * @author lucas
  */
-public abstract class ItemDigital extends Item {
+public class MissingObjectException extends Exception{
 
-    private boolean online;
+    public MissingObjectException(String msg) {
+        super(msg);
+    
+    }
 
-    public ItemDigital(int id, String nome) {
-        super(id, nome);
+    public MissingObjectException() {
     }
     
     
     
     
     
- 
-    }
-
- 
+    
+}

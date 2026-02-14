@@ -11,9 +11,11 @@ package biblioteca;
  */
 public interface Alugavel {
     
-    public void alugar();
+    public boolean alugar();
     
     public void devolver();
+    
+    public int getExemplares();
     
     
 }

@@ -12,7 +12,6 @@ package biblioteca;
 public abstract class Item {
     
     private final int id;
-    private  boolean sobPosse = false;
     private final String nome;
 
     public Item(int id, String nome) {
@@ -28,20 +27,13 @@ public abstract class Item {
         return id;
     }
 
-    public boolean isSobposse() {
-        return this.sobPosse;
-    }
+    
 
     public String getNome() {
         return nome;
     }
 
-    public void setSobPosse(boolean sobPosse) {
-        this.sobPosse = sobPosse;
-    }
-
-    
-
+   
 
     
     

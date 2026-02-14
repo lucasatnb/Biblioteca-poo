@@ -17,7 +17,6 @@ public class Computador extends ItemFisico implements Utilizavel {
 
     @Override
     public void usar() {
-
         System.out.println("você pode ir la usar por 30min");
         }
     

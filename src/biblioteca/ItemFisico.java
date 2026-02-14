@@ -9,7 +9,9 @@ package biblioteca;
  *
  * @author lucas
  */
-public class ItemFisico extends Item {
+public abstract class ItemFisico extends Item {
+    private int exemplares = 0;
+    
     private int prazo;
     private int diasPassados;
 
@@ -31,7 +33,17 @@ public class ItemFisico extends Item {
         }
     }
     
+    public void addExemplar(){
+        this.exemplares++;
     
+    }
+    public void subExemplar(){
+        this.exemplares--;
+    
+    }
 
+    public int getExemplares() {
+        return this.exemplares;
+    }
 
 }

@@ -21,7 +21,7 @@ Projeto desenvolvido para praticar Programação Orientada a Objetos em Java.
 Em desenvolvimento 🚧
 
 ## Objetivos futuros
-- Tratamento de exceções
+- Tratamento de exceções✅ 
 - Interface interativa (CLI)
 - Interface gráfica
 - Banco de dados

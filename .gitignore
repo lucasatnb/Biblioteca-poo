@@ -1,0 +1,10 @@
+# Java
+*.class
+
+# NetBeans
+/build/
+/dist/
+
+# IDEs
+.idea/
+.vscode/

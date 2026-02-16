@@ -9,13 +9,15 @@ package biblioteca;
  *
  * @author lucas
  */
-public interface Alugavel {
+public class ValorNegativoException extends RuntimeException{
+
+    public ValorNegativoException(String s) {
+        super(s);
+    }
+
+    public ValorNegativoException() {
+    }
     
-    public boolean alugar(String nome);
-    
-    public void devolver();
-    
-    public int getExemplares();
     
     
 }

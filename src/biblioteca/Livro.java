@@ -15,15 +15,15 @@ public class Livro extends ItemFisico implements Alugavel,Utilizavel {
     private SistemaDeAluguel sistema;
     public Livro(String nome, SistemaDeAluguel sis) {
         super(001, nome, prazo);
-        super.addExemplar();
+        super.addExemplar(1);
         this.sistema = sis;
     }
 
 
    @Override
-    public boolean alugar() { 
+    public boolean alugar(String nome) { 
         try {
-            sistema.alugar(this);
+            sistema.alugar(this, nome);
             return true;
         } 
         catch (MissingObjectException ex) {

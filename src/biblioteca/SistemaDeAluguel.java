@@ -14,13 +14,14 @@ public class SistemaDeAluguel {
     
     
     
-    public boolean alugar(ItemFisico item) throws MissingObjectException {
-        System.out.println("solicitando aluguel");
+    public boolean alugar(ItemFisico item, String nome) throws MissingObjectException {
+        System.out.println("solicitando aluguel do " + item.getClass() + ": " + item.getNome());
         
         if(item.getExemplares() <= 0){
             throw new MissingObjectException("Sem exemplares");
         }
-        
+        System.out.println("Usuario:"+ nome  + ". alugou com sucesso");
+
         item.subExemplar();
         
         return true;
@@ -28,8 +29,12 @@ public class SistemaDeAluguel {
     
     public boolean devolver(ItemFisico item){
         System.out.println("solicitando aluguel");
-        item.addExemplar();
-        
+        try{
+            item.addExemplar(1);
+        }
+        catch(Exception ex){
+            System.out.println("erro");
+        }
         return true;
     }
 

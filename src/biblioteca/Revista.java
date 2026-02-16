@@ -5,9 +5,6 @@
  */
 package biblioteca;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 
 
@@ -23,6 +20,7 @@ public class Revista extends ItemFisico implements Alugavel,Utilizavel {
     public Revista( String nome , SistemaDeAluguel sis) {
         super(011, nome, prazo);
         this.sistema = sis;
+        super.addExemplar(1);
     }
 
    
@@ -35,9 +33,9 @@ public class Revista extends ItemFisico implements Alugavel,Utilizavel {
     }
 
     @Override
-    public boolean alugar() { 
+    public boolean alugar(String nome) { 
         try {
-            sistema.alugar(this);
+            sistema.alugar(this, nome);
             return true;
         } 
         catch (MissingObjectException ex) {

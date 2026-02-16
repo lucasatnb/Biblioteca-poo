@@ -11,9 +11,16 @@ package biblioteca;
  */
 public class Usuario {
     private Alugavel alugavel = null;
+    private String nome;
+
+    public Usuario(String nome) {
+        this.nome = nome;
+    }
+
     
     
-    public void alugado(Alugavel a) {
+    
+    public void alugar(Alugavel a) {
         if (alugavel != null){
             throw new LoanLimitExceededException("Sò um por vez");
         }
@@ -21,12 +28,11 @@ public class Usuario {
             throw new ItemAlreadyOwnedException("Não tem mais que pena");
         
         }
-        boolean conseguiu = a.alugar();
+        boolean conseguiu = a.alugar(this.nome);
         
         if(conseguiu){
             this.alugavel = a;
         
-            System.out.println("alugado");
         }else System.out.println("não alugado");
         
         

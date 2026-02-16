@@ -9,13 +9,18 @@ package biblioteca;
  *
  * @author lucas
  */
-public interface Alugavel {
+public class ObjetoJaexistente extends RuntimeException {
+
+    public ObjetoJaexistente(String s) {
+        super(s);
     
-    public boolean alugar(String nome);
+    }
+
+    public ObjetoJaexistente() {
+    }
     
-    public void devolver();
     
-    public int getExemplares();
+    
     
     
 }

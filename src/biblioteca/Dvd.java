@@ -16,13 +16,14 @@ public class Dvd extends ItemFisico implements Alugavel {
 
     public Dvd( String nome, SistemaDeAluguel sis) {
         super(010, nome, prazo);
+        super.addExemplar(1);
         sistema = sis;
     }
 
 @Override
-    public boolean alugar() { 
+    public boolean alugar(String nome) { 
         try {
-            sistema.alugar(this);
+            sistema.alugar(this, nome );
             return true;
         } 
         catch (MissingObjectException ex) {

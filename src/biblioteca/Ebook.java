@@ -16,8 +16,8 @@ public class Ebook extends ItemDigital implements Alugavel{
     }
 
      @Override
-    public boolean alugar() {
-        
+    public boolean alugar(String nome) {
+        System.out.println(nome+ ": alugou");
         return true;
     }
     

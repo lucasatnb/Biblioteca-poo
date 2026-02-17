@@ -11,7 +11,6 @@ public class Biblioteca {
 
         // --- PREPARAÇÃO ---
         SistemaDeAluguel sisMatriz = new SistemaDeAluguel();
-        SistemaDeAluguel sisFilial = new SistemaDeAluguel(); // Para o teste 6
 
         System.out.println("=== 📚 BATERIA DE TESTES DO SISTEMA V2.0 ===\n");
 
@@ -20,8 +19,8 @@ public class Biblioteca {
         // (Testa se o nome vai pro sistema corretamente)
         // ---------------------------------------------------------
         System.out.println("--- [TESTE 1] Identificação do Usuário ---");
-        Usuario u1 = new Usuario("Lucas");
-        Livro cleanCode = new Livro("Clean Code", sisMatriz); // Nasce com 1 exemplar
+        Usuario u1 = new Usuario("Lucas",sisMatriz);
+        Livro cleanCode = new Livro("Clean Code"); // Nasce com 1 exemplar
 
         try {
             u1.alugar(cleanCode); // Deve aparecer "Usuario: Lucas alugou..."
@@ -35,7 +34,7 @@ public class Biblioteca {
         // (Testa LoanLimitExceededException)
         // ---------------------------------------------------------
         System.out.println("\n--- [TESTE 2] O Guloso (Erro Antigo) ---");
-        Revista revista = new Revista("Vogue", sisMatriz);
+        Revista revista = new Revista("Vogue");
         try {
             u1.alugar(cleanCode); // Pegou o primeiro
             System.out.println("Lucas tenta pegar o segundo...");
@@ -54,7 +53,7 @@ public class Biblioteca {
         // ---------------------------------------------------------
         System.out.println("\n--- [TESTE 3] 10 Usuários alugando o mesmo título ---");
         
-        Livro domCasmurro = new Livro("Dom Casmurro", sisMatriz); // Tem 1
+        Livro domCasmurro = new Livro("Dom Casmurro"); // Tem 1
         
         // Vamos adicionar 9 exemplares de uma vez (Total = 10)
         domCasmurro.addExemplar(9); 
@@ -63,7 +62,7 @@ public class Biblioteca {
         // Criando 11 usuários (10 conseguem, 1 chora)
         Usuario[] torcidaDoFortaleza = new Usuario[11];
         for (int i = 0; i < 11; i++) {
-            torcidaDoFortaleza[i] = new Usuario("Torcedor " + (i+1));
+            torcidaDoFortaleza[i] = new Usuario("Torcedor " + (i+1),sisMatriz);
         }
 
         for (Usuario torcedor : torcidaDoFortaleza) {
@@ -96,7 +95,7 @@ public class Biblioteca {
         // (Testa ItemAlreadyOwnedException ao devolver nada)
         // ---------------------------------------------------------
         System.out.println("\n--- [TESTE 5] Devolver o Vento ---");
-        Usuario esquecido = new Usuario("Pedro Esquecido");
+        Usuario esquecido = new Usuario("Pedro Esquecido",sisMatriz);
         try {
             esquecido.devolver();
         } catch (ItemAlreadyOwnedException e) {
@@ -105,38 +104,29 @@ public class Biblioteca {
 
         // ---------------------------------------------------------
         // TESTE 6: MULTIVERSO (DOIS SISTEMAS DIFERENTES)
-        // (Testa se o estoque de um afeta o outro)
+        // (
         // ---------------------------------------------------------
-        System.out.println("\n--- [TESTE 6] Dois Sistemas Isolados ---");
-        
-        // Livro A pertence à MATRIZ
-        Livro livroMatriz = new Livro("Livro Exclusivo Matriz", sisMatriz);
-        
-        // Livro B pertence à FILIAL
-        Livro livroFilial = new Livro("Livro Exclusivo Filial", sisFilial);
+        System.out.println("\n--- [TESTE 6] criar outro sistema ---");
 
-        Usuario viajante = new Usuario("Viajante");
+        try{
+            SistemaDeAluguel sisFiliar = new SistemaDeAluguel();
         
-        try {
-            // Aluga na filial
-            viajante.alugar(livroFilial);
+        
+        }catch(SistemaUnico e){
             
-            // Verifica estoque da matriz (não deve ter mudado o dela)
-            System.out.println("Estoque Matriz (deve ser 1): " + livroMatriz.getExemplares());
-            System.out.println("Estoque Filial (deve ser 0): " + livroFilial.getExemplares());
-            
-            viajante.devolver(); // Devolve pra filial
+            System.err.println("só é possivel existir um sistema");
+            System.out.println("✅ SUCESSO: " + e.getMessage());
 
-        } catch (Exception e) {
-            System.out.println("Erro no multiverso: " + e.getMessage());
         }
-
+        
+        
+        
         // ---------------------------------------------------------
         // TESTE 7: O CALOTEIRO (MULTA E DIAS PASSADOS)
         // ---------------------------------------------------------
         System.out.println("\n--- [TESTE 7] Atraso e Multa ---");
-        Livro javaAvancado = new Livro("Java Advanced", sisMatriz);
-        Usuario caloteiro = new Usuario("Zé Calote");
+        Livro javaAvancado = new Livro("Java Advanced");
+        Usuario caloteiro = new Usuario("Zé Calote", sisMatriz);
         
         try {
             caloteiro.alugar(javaAvancado);
@@ -165,10 +155,10 @@ public class Biblioteca {
         
         try {
             System.out.println("1. Criando 'O Pequeno Príncipe' (Inédito)...");
-            Livro p1 = new Livro("O Pequeno Príncipe", sisMatriz); // Deve passar
+            Livro p1 = new Livro("O Pequeno Príncipe"); // Deve passar
             
             System.out.println("2. Tentando criar 'O Pequeno Príncipe' DE NOVO (Deve falhar)...");
-            Livro p2 = new Livro("O Pequeno Príncipe", sisMatriz); // AQUI TEM QUE DAR ERRO
+            Livro p2 = new Livro("O Pequeno Príncipe"); // AQUI TEM QUE DAR ERRO
             
             // Se chegar aqui, a validação falhou
             System.out.println("❌ FALHA: O sistema deixou criar duplicado!");

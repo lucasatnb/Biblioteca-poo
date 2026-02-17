@@ -11,32 +11,16 @@ package biblioteca;
  * @author lucas
  */
 public class Dvd extends ItemFisico implements Alugavel {
-    static int prazo = 3;
-    private final SistemaDeAluguel sistema;
+    static final int PRAZOPARADVD = 3;
 
-    public Dvd( String nome, SistemaDeAluguel sis) {
-        super(010, nome, prazo);
-        super.addExemplar(1);
-        sistema = sis;
+    public Dvd( String nome) {
+        super(nome);
+        super.setPrazo(PRAZOPARADVD);
+        super.setId(002);
+     
     }
 
-@Override
-    public boolean alugar(String nome) { 
-        try {
-            sistema.alugar(this, nome );
-            return true;
-        } 
-        catch (MissingObjectException ex) {
-            System.err.println("sem itens do tipo:" + super.getNome());
-        }
-        return false;
-    }
-    
-        @Override
-    public void devolver() {
-        sistema.devolver(this);
-         
-    }
+
 
     @Override
     public int getExemplares() {

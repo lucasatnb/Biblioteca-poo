@@ -11,19 +11,21 @@ import java.util.List;
  *
  * @author lucas
  */
-public abstract class ItemFisico extends Item {
+public  class ItemFisico extends Item {
     private int exemplares = 0;
     static List<String> LivrosAdicionados = new ArrayList<>();
     private int prazo;
     private int diasPassados;
 
-    public ItemFisico(int id, String nome,int prazo) {
-        super(id, nome);
-        this.prazo = prazo;
+    
+    
+    public ItemFisico(String nome) {
+        super.setNome(nome);
         
         
         try{
             AdicionarItem(nome);
+            this.addExemplar(1);
         }catch(ObjetoJaexistente ex){
             System.err.println("ja existe desse tipo");
             throw new ObjetoJaexistente("////////////");
@@ -32,6 +34,14 @@ public abstract class ItemFisico extends Item {
         
         
         
+    }
+
+    public int getPrazo() {
+        return prazo;
+    }
+
+    public void setPrazo(int prazo) {
+        this.prazo = prazo;
     }
     
     public void amanha(){

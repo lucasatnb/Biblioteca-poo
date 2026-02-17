@@ -5,19 +5,20 @@
  */
 package biblioteca;
 
+import java.lang.reflect.Executable;
+
 /**
  *
  * @author lucas
  */
-public interface Alugavel {
+public class SistemaUnico extends RuntimeException{
+
+    public SistemaUnico(String s) {
+        super(s);
+    }
+
+    public SistemaUnico() {
+    }
     
-    public abstract void subExemplar();
-
-    public abstract void addExemplar(int num);
     
-
-    public abstract int getExemplares();
-
-
-
 }

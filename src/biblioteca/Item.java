@@ -11,15 +11,17 @@ package biblioteca;
  */
 public abstract class Item {
     
-    private final int id;
-    private final String nome;
+    private  int id;
+    private  String nome;
 
-    public Item(int id, String nome) {
-      
-        
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
+
     
     
 

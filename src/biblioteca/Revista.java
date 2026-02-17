@@ -13,14 +13,14 @@ package biblioteca;
  * @author lucas
  */
 public class Revista extends ItemFisico implements Alugavel,Utilizavel {
-    static int prazo = 1;
-    private final SistemaDeAluguel sistema;
+    static final int PRAZODAREVISTA = 1;
 
     
-    public Revista( String nome , SistemaDeAluguel sis) {
-        super(011, nome, prazo);
-        this.sistema = sis;
-        super.addExemplar(1);
+    public Revista( String nome ) {
+        super(nome);
+        super.setId(005);
+        super.setPrazo(PRAZODAREVISTA);
+
     }
 
    
@@ -32,23 +32,7 @@ public class Revista extends ItemFisico implements Alugavel,Utilizavel {
 
     }
 
-    @Override
-    public boolean alugar(String nome) { 
-        try {
-            sistema.alugar(this, nome);
-            return true;
-        } 
-        catch (MissingObjectException ex) {
-            System.err.println("sem itens do tipo:" + super.getNome());
-        }
-        return false;
-    }
     
-    @Override
-    public void devolver() {
-            sistema.devolver(this);
-         
-    }
     @Override
     public int getExemplares() {
         return super.getExemplares();

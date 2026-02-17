@@ -9,26 +9,19 @@ package biblioteca;
  *
  * @author lucas
  */
-public class Ebook extends ItemDigital implements Alugavel{
-
-    public Ebook( String nome) {
-        super(110, nome);
-    }
-
-     @Override
-    public boolean alugar(String nome) {
-        System.out.println(nome+ ": alugou");
-        return true;
-    }
+public class Ebook extends ItemDigital implements Utilizavel{
     
-    @Override
-    public void devolver() {
-
-        
+    
+    
+    public Ebook(String nome) {
+        super.setNome(nome);
+        super.setId(003);
     }
-    @Override
-    public int getExemplares() {
-         return Integer.MAX_VALUE;
 
+    @Override
+    public void usar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 }

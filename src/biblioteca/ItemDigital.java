@@ -13,8 +13,8 @@ public abstract class ItemDigital extends Item {
 
     private boolean online;
 
-    public ItemDigital(int id, String nome) {
-        super(id, nome);
+    public ItemDigital() {
+        
     }
     
     

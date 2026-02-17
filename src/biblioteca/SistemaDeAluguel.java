@@ -11,15 +11,27 @@ package biblioteca;
  * @author lucas
  */
 public class SistemaDeAluguel {
+    static int numerosDeSistemas = 0;
+    public SistemaDeAluguel() {
+        if(SistemaDeAluguel.numerosDeSistemas > 0){
+            throw new SistemaUnico("sistema deve ser unico");
+
+        }
+        
+        SistemaDeAluguel.numerosDeSistemas++;
+    }
+   
+
     
     
     
-    public boolean alugar(ItemFisico item, String nome) throws MissingObjectException {
-        System.out.println("solicitando aluguel do " + item.getClass() + ": " + item.getNome());
+    public boolean alugar(Alugavel item, String nome) throws MissingObjectException, NaoAlugavel {
+        System.out.println("solicitando aluguel do item");
         
         if(item.getExemplares() <= 0){
             throw new MissingObjectException("Sem exemplares");
         }
+        
         System.out.println("Usuario:"+ nome  + ". alugou com sucesso");
 
         item.subExemplar();
@@ -27,13 +39,13 @@ public class SistemaDeAluguel {
         return true;
     }
     
-    public boolean devolver(ItemFisico item){
-        System.out.println("solicitando aluguel");
+    public boolean devolver(Alugavel item){
+        System.out.println("solicitando Devolução");
         try{
             item.addExemplar(1);
         }
-        catch(Exception ex){
-            System.out.println("erro");
+        catch(NullPointerException ex){
+            System.out.println("sem item pra devolver");
         }
         return true;
     }

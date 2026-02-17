@@ -10,14 +10,17 @@ package biblioteca;
  * @author lucas
  */
 public class Computador extends ItemFisico implements Utilizavel {
-    static int prazo = 0;
-    public Computador( String nome) {
-        super(100, nome, prazo);
+    
+    public Computador( String nome, int prazoMin) {
+        super(nome);
+        super.setId(800);
+        super.setPrazo(prazoMin);
+
     }
 
     @Override
     public void usar() {
-        System.out.println("você pode ir la usar por 30min");
+        System.out.println("você pode ir la usar por:"+ super.getPrazo());
         }
     
     

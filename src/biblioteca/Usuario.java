@@ -11,9 +11,11 @@ package biblioteca;
  */
 public class Usuario {
     private Alugavel alugavel = null;
-    private String nome;
+    private final String nome;
+    private final SistemaDeAluguel sis;
 
-    public Usuario(String nome) {
+    public Usuario(String nome, SistemaDeAluguel sistema) {
+        sis = sistema;
         this.nome = nome;
     }
 
@@ -24,16 +26,21 @@ public class Usuario {
         if (alugavel != null){
             throw new LoanLimitExceededException("Sò um por vez");
         }
-        if (a.getExemplares() <=0){
-            throw new ItemAlreadyOwnedException("Não tem mais que pena");
-        
+       
+
+        try{
+            this.sis.alugar(a, this.nome);
+            this.alugavel = a; 
+
+        }catch(MissingObjectException ex){
+            
+            System.err.println("estamos sem esse item");
+        }catch(NaoAlugavel ex){
+            System.err.println("não é alugavel");
+        }finally{
+            System.out.println("operação concluida");
+            
         }
-        boolean conseguiu = a.alugar(this.nome);
-        
-        if(conseguiu){
-            this.alugavel = a;
-        
-        }else System.out.println("não alugado");
         
         
         
@@ -42,7 +49,7 @@ public class Usuario {
         if(alugavel == null){
             throw new ItemAlreadyOwnedException("erro: sem item a devolver");            
         }
-        this.alugavel.devolver();
+        this.sis.devolver(this.alugavel);
         alugavel = null;
     }
     public void usar(Utilizavel u){
@@ -51,6 +58,7 @@ public class Usuario {
         }
         u.usar();
     }
+
     
     
     

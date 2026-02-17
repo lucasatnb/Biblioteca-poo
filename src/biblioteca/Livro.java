@@ -12,7 +12,6 @@ package biblioteca;
  */
 public class Livro extends ItemFisico implements Alugavel,Utilizavel {
     private final int prazoParaLivros = 5;
-    private SistemaDeAluguel sistema;
     public Livro(String nome) {
         super(nome);
 

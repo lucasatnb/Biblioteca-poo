@@ -8,10 +8,14 @@ Projeto desenvolvido para praticar Programação Orientada a Objetos em Java.
 - Polimorfismo
 - Organização de classes
 
-## Funcionalidades
-- Aluguel de itens
-- Uso de recursos
-- Diferentes tipos de mídia (livro, revista, ebook, etc.)
+## Funcionalidades Implementadas
+- ✅ **Controle de Estoque:** Validação de exemplares disponíveis antes do aluguel.
+- ✅ **Regras de Negócio:**
+  - Bloqueio de múltiplos empréstimos simultâneos por usuário.
+  - Cálculo de multas por atraso (R$ 0,10 por dia).
+  - Impedimento de cadastro de itens duplicados.
+- ✅ **Tratamento de Erros:** Feedback visual para itens inexistentes, não-alugáveis ou estoque vazio.
+- 🚧 **Interface:** Atualmente rodando via bateria de testes no Console.
 
 ## Tecnologias
 - Java

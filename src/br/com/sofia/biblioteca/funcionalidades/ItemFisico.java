@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,18 +13,19 @@ import java.util.List;
  */
 public  class ItemFisico extends Item {
     private int exemplares = 0;
-    static List<String> LivrosAdicionados = new ArrayList<>();
     private int prazo;
     private int diasPassados;
 
-    
+    private ItemFisicoFabrica fabrica = ItemFisicoFabrica.getInstance(); 
     
     public ItemFisico(String nome) {
         super.setNome(nome);
         
         
         try{
-            AdicionarItem(nome);
+            fabrica.AdicionarItem(this);
+            
+            
             this.addExemplar(1);
         }catch(ObjetoJaexistente ex){
             System.err.println("ja existe desse tipo");
@@ -44,6 +45,9 @@ public  class ItemFisico extends Item {
         this.prazo = prazo;
     }
     
+    
+    // violação do principio srp
+    
     public void amanha(){
     
         this.diasPassados++;
@@ -57,15 +61,7 @@ public  class ItemFisico extends Item {
         }
     }
     
-    private void AdicionarItem(String s){
-        
-            if(ItemFisico.LivrosAdicionados.contains(s)){
-            throw new ObjetoJaexistente("tentou criar um item ja existente");
-            }
-            ItemFisico.LivrosAdicionados.add(s);
-
     
-    }
     
     public void addExemplar(int num) {
             if (num <=0){

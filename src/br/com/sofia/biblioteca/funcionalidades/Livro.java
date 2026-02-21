@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 
 /**
@@ -12,7 +12,7 @@ package biblioteca;
  */
 public class Livro extends ItemFisico implements Alugavel,Utilizavel {
     private final int prazoParaLivros = 5;
-    public Livro(String nome) {
+     public Livro(String nome) {
         super(nome);
 
         super.setId(001);

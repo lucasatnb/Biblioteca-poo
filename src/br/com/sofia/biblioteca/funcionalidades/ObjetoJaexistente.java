@@ -3,15 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public interface Utilizavel {
+public class ObjetoJaexistente extends RuntimeException {
+
+    public ObjetoJaexistente(String s) {
+        super(s);
+    
+    }
+
+    public ObjetoJaexistente() {
+    }
     
     
-    public void usar();
+    
+    
     
 }

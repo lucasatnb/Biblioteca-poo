@@ -3,23 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public class ItemAlreadyOwnedException extends RuntimeException{
-
-    public ItemAlreadyOwnedException(String s) {
-        super(s);
-    }
-
-    public ItemAlreadyOwnedException() {
-    }
+public interface Utilizavel {
     
     
-    
-    
+    public void usar();
     
 }

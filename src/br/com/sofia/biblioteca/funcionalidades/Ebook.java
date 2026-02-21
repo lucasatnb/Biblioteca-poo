@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
@@ -14,13 +14,15 @@ public class Ebook extends ItemDigital implements Utilizavel{
     
     
     public Ebook(String nome) {
-        super.setNome(nome);
+        super(nome);
         super.setId(003);
     }
 
     @Override
     public void usar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("você");
+        
+        
     }
 
     

@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
 public class Usuario {
-    private Alugavel alugavel = null;
+    private Alugavel                          alugavel = null;
     private final String nome;
     private final SistemaDeAluguel sis;
 

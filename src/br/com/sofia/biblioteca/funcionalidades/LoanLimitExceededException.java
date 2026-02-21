@@ -3,25 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public abstract class ItemDigital extends Item {
+public class LoanLimitExceededException  extends RuntimeException{
 
-    private boolean online;
-
-    public ItemDigital() {
-        
+    public LoanLimitExceededException(String s) {
+        super(s);
     }
     
     
     
     
     
- 
-    }
-
- 
+}

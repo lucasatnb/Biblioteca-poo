@@ -3,7 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/biblioteca/Biblioteca.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/SistemaDeAluguel.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/ItemDigital.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/ItemAlreadyOwnedException.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/teste/Biblioteca.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/ItemFisicoFabrica.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/Usuario.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/LoanLimitExceededException.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/Revista.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/Dvd.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/Alugavel.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/Livro.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/Ebook.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Biblioteca/src/br/com/sofia/biblioteca/funcionalidades/ItemFisico.java</file>
         </group>
     </open-files>
 </project-private>

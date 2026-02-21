@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public class NaoAlugavel extends Exception{
+public class ItemAlreadyOwnedException extends RuntimeException{
 
-    public NaoAlugavel(String s) {
+    public ItemAlreadyOwnedException(String s) {
         super(s);
     }
 
-    public NaoAlugavel() {
+    public ItemAlreadyOwnedException() {
     }
+    
     
     
     

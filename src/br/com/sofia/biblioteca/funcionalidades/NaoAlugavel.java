@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public interface Alugavel {
+public class NaoAlugavel extends Exception{
+
+    public NaoAlugavel(String s) {
+        super(s);
+    }
+
+    public NaoAlugavel() {
+    }
     
-    public abstract void subExemplar();
-
-    public abstract void addExemplar(int num);
     
-
-    public abstract int getExemplares();
-
-
-
+    
+    
 }

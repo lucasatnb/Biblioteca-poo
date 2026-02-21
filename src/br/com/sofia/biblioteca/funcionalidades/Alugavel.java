@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public class LoanLimitExceededException  extends RuntimeException{
+public interface Alugavel {
+    
+    public abstract void subExemplar();
 
-    public LoanLimitExceededException(String s) {
-        super(s);
-    }
+    public abstract void addExemplar(int num);
     
-    
-    
-    
-    
+
+    public abstract int getExemplares();
+
+
+
 }

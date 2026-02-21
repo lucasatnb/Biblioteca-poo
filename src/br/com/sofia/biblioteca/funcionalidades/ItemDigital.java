@@ -3,25 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public class MissingObjectException extends Exception{
+public abstract class ItemDigital extends Item{
 
-    public MissingObjectException(String msg) {
-        super(msg);
+    private boolean online;
+
+    public ItemDigital(String nome) {
+        super.setNome(nome);
+        
+        
+        
+    }
     
+    
+    
+    
+    
+ 
     }
 
-    public MissingObjectException() {
-    }
-    
-    
-    
-    
-    
-    
-}
+ 

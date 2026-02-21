@@ -3,22 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
-
-import java.lang.reflect.Executable;
+package br.com.sofia.biblioteca.funcionalidades;
 
 /**
  *
  * @author lucas
  */
-public class SistemaUnico extends RuntimeException{
+public class MissingObjectException extends Exception{
 
-    public SistemaUnico(String s) {
-        super(s);
+    public MissingObjectException(String msg) {
+        super(msg);
+    
     }
 
-    public SistemaUnico() {
+    public MissingObjectException() {
     }
+    
+    
+    
+    
     
     
 }

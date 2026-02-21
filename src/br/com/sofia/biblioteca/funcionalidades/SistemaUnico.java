@@ -3,24 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.funcionalidades;
+
+import java.lang.reflect.Executable;
 
 /**
  *
  * @author lucas
  */
-public class ObjetoJaexistente extends RuntimeException {
+public class SistemaUnico extends RuntimeException{
 
-    public ObjetoJaexistente(String s) {
+    public SistemaUnico(String s) {
         super(s);
-    
     }
 
-    public ObjetoJaexistente() {
+    public SistemaUnico() {
     }
-    
-    
-    
     
     
 }

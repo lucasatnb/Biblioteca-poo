@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package biblioteca;
+package br.com.sofia.biblioteca.teste;
+
+import br.com.sofia.biblioteca.funcionalidades.*;
+
+import calculadora.Operacoes;
+
 
 public class Biblioteca {
 
     public static void main(String[] args) {
-
+        
         // --- PREPARAÇÃO ---
         SistemaDeAluguel sisMatriz = new SistemaDeAluguel();
 
@@ -167,5 +172,7 @@ public class Biblioteca {
             // Se cair aqui, a validação funcionou!
             System.out.println("✅ SUCESSO! O sistema barrou a cópia: " + e.getMessage());
         }
+
+                        
     }
 }

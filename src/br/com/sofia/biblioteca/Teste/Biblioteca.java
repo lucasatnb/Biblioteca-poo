@@ -7,7 +7,6 @@ package br.com.sofia.biblioteca.teste;
 
 import br.com.sofia.biblioteca.funcionalidades.*;
 
-import calculadora.Operacoes;
 
 
 public class Biblioteca {
